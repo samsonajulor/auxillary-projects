@@ -7,7 +7,7 @@ CSV_FILE=names.csv
 GROUP_NAME=developers
 
 # setting the name of the ssh directory for skel
-SSH_SKEL=/etc/skel/.ssh
+SSH_SKEL=/etc/skel/.ssh/
 
 # variable for public key file
 AUTH=authorized_keys
@@ -45,7 +45,7 @@ while IFS= read USERNAME
       sudo echo -e "$PASSWORD\n$PASSWORD" | sudo passwd "${USERNAME}"
       sudo passwd -x 5 "${USERNAME}"
       sudo chmod 700 /home/$USERNAME/.ssh 
-      sudo chmod 644 /home/$USERNAME/.ssh/authorized_keys
+      sudo chmod 644 /home/$USERNAME/.ssh/$AUTH
       echo $USERNAME successfully created
      fi
     done < $CSV_FILE

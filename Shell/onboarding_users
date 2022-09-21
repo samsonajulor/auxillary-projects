@@ -12,6 +12,9 @@ SSH_SKEL=/etc/skel/.ssh
 # variable for public key file
 AUTH=authorized_keys
 
+# creating password varible
+PASSWORD=password
+
 # check if the group exists
 if [ $(getent group devlopers) ];
 then

@@ -39,6 +39,9 @@ Ensure that each user has a .ssh folder within its HOME folder. If it does not e
 
 For each user’s SSH configuration, create an authorized_keys file and add ensxure it has the public key of your current user.
 
+- remove the user if error
+`sudo userdel -r <username>`
+
 Before Deploying your script, you will need to update your current user with the correct public key and private key.
 
 In your current home directory change directo .ssh folder

@@ -4,12 +4,13 @@
 
 # setting name of csv file
 CSV_FILE=names.csv
-
 GROUP_NAME=developers
 
 # setting the name of the ssh directory for skel
-
 SSH_SKEL=/etc/skel/.ssh
+
+# variable for public key file
+AUTH=authorized_keys
 
 # check if the group exists
 if [ $(getent group devlopers) ];
@@ -26,6 +27,8 @@ then
     echo "$SSH_SKEL already exists"
 else 
     sudo mkdir -p $SSH_SKEL
+    sudo bash -c "cat $AUTH >> $SSH_SKEL/authorized_keys"
+fi
 
 # create each user on the server
 while IFS= read USERNAME
@@ -36,3 +39,12 @@ while IFS= read USERNAME
       echo $USERNAME already exists
      else
       sudo useradd -m -G $GROUP_NAME $USERNAME
+      sudo echo -e "$PASSWORD\n$PASSWORD" | sudo passwd "${USERNAME}"
+      sudo passwd -x 5 "${USERNAME}"
+      sudo chmod 700 /home/$USERNAME/.ssh 
+      sudo chmod 644 /home/$USERNAME/.ssh/authorized_keys
+      echo $USERNAME successfully created
+     fi
+    done < $CSV_FILE
+    
+exit 0

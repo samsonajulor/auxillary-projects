@@ -42,7 +42,7 @@ while IFS= read USERNAME
      then 
       echo $USERNAME already exists
      else
-      sudo useradd -m -G $GROUP_NAME $USERNAME
+      sudo useradd -m -G $GROUP_NAME -s /bin/bash $USERNAME
       sudo echo -e "$PASSWORD\n$PASSWORD" | sudo passwd "${USERNAME}"
       sudo passwd -x 5 ${USERNAME}
       sudo chmod 700 /home/$USERNAME/.ssh 

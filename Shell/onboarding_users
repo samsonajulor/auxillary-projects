@@ -7,6 +7,10 @@ CSV_FILE=names.csv
 
 GROUP_NAME=developers
 
+# setting the name of the ssh directory for skel
+
+SSH_SKEL=/etc/skel/.ssh
+
 # check if the group exists
 if [ $(getent group devlopers) ];
 then
@@ -15,3 +19,20 @@ else
     sudo groupadd $GROUP_NAME
     echo group created successfully
 fi
+
+# add SSH folder to the skel directory
+if [ -d "$SSH_SKEL" ];
+then 
+    echo "$SSH_SKEL already exists"
+else 
+    sudo mkdir -p $SSH_SKEL
+
+# create each user on the server
+while IFS= read USERNAME
+    do 
+     # check if the username already exists
+     if [ $(getent passwd) $USERNAME ];
+     then 
+      echo $USERNAME already exists
+     else
+      sudo useradd -m -G $GROUP_NAME $USERNAME

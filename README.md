@@ -21,9 +21,17 @@ The script you created should read the CSV file, create each user on the server,
 
 Ensure that your script will first check for the existence of the user on the system, before it will attempt to create that it.
 
-how to check if a user exists
+## how to check if a user exists
 `cd /etc`
 `getent group developers`
+
+## how to read a file
+``
+
+## use the internal fields separator $IFS
+// url of ifs
+
+PS: Anytime a new user is created, examples.desktop get populated in the /etc/skel/ directory. Put your variables in quotes if there is a tendency for linux to expand it.
 
 Ensure that the user that is being created also has a default home folder
 

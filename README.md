@@ -16,8 +16,14 @@ In this project, you need to onboard 20 new Linux users onto a server. Create a 
 - Insert some random names into it. (One name per line)
 
 The script you created should read the CSV file, create each user on the server, and add to an existing group called developers (You will need to manually create this group ahead).
+`touch onboarding_users`
+`chmod +x onboarding_users`
 
 Ensure that your script will first check for the existence of the user on the system, before it will attempt to create that it.
+
+how to check if a user exists
+`cd /etc`
+`getent group developers`
 
 Ensure that the user that is being created also has a default home folder
 

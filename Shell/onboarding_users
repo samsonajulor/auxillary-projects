@@ -34,7 +34,7 @@ fi
 while IFS= read USERNAME
     do 
      # check if the username already exists
-     if [ $(getent passwd) $USERNAME ];
+     if [ $(getent passwd $USERNAME) ];
      then 
       echo $USERNAME already exists
      else
@@ -46,5 +46,5 @@ while IFS= read USERNAME
       echo $USERNAME successfully created
      fi
     done < $CSV_FILE
-    
+
 exit 0

@@ -31,7 +31,7 @@ then
 else 
     sudo mkdir -p $SSH_SKEL
     sudo touch $SSH_SKEL/authorized_keys
-    sudo bash -c "cat $AUTH >> $SSH_SKEL/authorized_keys"
+    sudo bash -c "cat ../$AUTH >> $SSH_SKEL/authorized_keys"
 fi
 
 # create each user on the server

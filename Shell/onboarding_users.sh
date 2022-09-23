@@ -2,20 +2,16 @@
 
 # automating the creation of new users
 
-# setting name of csv file
+# variables
 CSV_FILE=names.csv
 GROUP_NAME=developers
-
-# setting the name of the ssh directory for skel
 SSH_SKEL=/etc/skel/.ssh/
-
-# variable for public key file
 AUTH=authorized_keys
-
-# creating password varible
 PASSWORD=password
 
-# check if the group exists
+
+
+# command
 if [ $(getent group devlopers) ];
 then
     echo group already exists

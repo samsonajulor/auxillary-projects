@@ -9,7 +9,7 @@
 userfile=$(cat names.csv)
 PASSWORD=PASSWORD
 
-if [ $(id -u) -q 0 ]; then
+if [ $(id -u) -eq 0 ]; then
      for user in $userfile; do
          echo $user
          if id "$user" &>/dev/null; then

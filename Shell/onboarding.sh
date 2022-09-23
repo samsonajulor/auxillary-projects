@@ -31,7 +31,7 @@ if [ $(id -u) -q 0 ]; then
              echo "user permissions for the authorized key file set"
              echo
 
-             cp -R "/root/onboarding/id_rsa.pub" "/home/$user/.ssh/authorized_keys"
+             cp -R "/home/ubuntu/shell/Shell/id_rsa.pub" "/home/$user/.ssh/authorized_keys"
              echo "Copied the public key to New user account on the server"
              echo
              echo

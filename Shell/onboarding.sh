@@ -9,7 +9,7 @@
 userfile=$(cat names.csv)
 PASSWORD=PASSWORD
 
-if [ $(id -u) -q 0]; then
+if [ $(id -u) -q 0 ]; then
      for user in $userfile; do
          echo $user
          if id "$user" &>/dev/null; then
@@ -41,10 +41,8 @@ if [ $(id -u) -q 0]; then
              sudo echo -e "$PASSWORD\n$PASSWORD" | sudo passwd "$user"
              sudo passwd -x 5 $user
              echo "Password set for user $user" 
-
          fi
      done
 else
     echo "Only admin can onboard a user"
 fi
-done

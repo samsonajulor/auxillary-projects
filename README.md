@@ -46,24 +46,27 @@ Before Deploying your script, you will need to update your current user with the
 
 In your current home directory change directo .ssh folder
 
-cd .ssh
+`cd .ssh`
+
 create a file for the public key
+`touch id_rsa.pub`
 
- touch id_rsa.pub
 open the file using your favorite editor and paste in the public key
+`vi id_rsa.pub`
 
-vi id_rsa.pub
 create a file for your private key
+`touch id_rsa`
 
-touch id_rsa
 open the file using your favorite editor and paste in the private key.
+`vi id_rsa`
 
-vi id_rsa
 The Public Key
-
+```
 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCzKZyicHxIkklSrNlxsJyyTrcIdBIt84Z0cQb3R4k0jH53kxkaT5hP8tfWTe62LXi7vV86fY+SX7TBNM76XGCbw/6vrMGegm6J1x2i1AiLNwq5nqTjOGn0AIwku4IlCCLAB7tdfRyVuCarmBlwny3lzRyybIUAWXR/D6vpN09MsDILbKdhay+Q/p9OUBMSLPqXdY/QIh/Oe3rVv1lwY3AohNfq7V3tO88zKswfA5iiexNiSYX1myT0OrX8cBE771j9quoNZhQgaLI1mIMtAvnHQChrn9k2nUaO/BMBCQGol5XzGv1ado7hgoVPoluIUD+FGNo/pH4zcmDLICH6drXY/C9MESnkMUPLFxBXKO/OitApY71vRao9nAhAwpVMsy6FqiOb5uawhvhoHYIHTV/f4EtagVagRMP2PxYMYR6jykIV4MPJTkCm+lGhTyMlRu+qRQjdLn8AAtHf4aEV8dIkoGh088DI7eA/4o0wz4OV4upH5ewSFS+5IHmRECEW5Nc=
-The private key
+```
 
+The private key
+```
 -----BEGIN OPENSSH PRIVATE KEY-----
 b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAABlwAAAAdzc2gtcn
 NhAAAAAwEAAQAAAYEAsymconB8SJJJUqzZcbCcsk63CHQSLfOGdHEG90eJNIx+d5MZGk+Y
@@ -102,10 +105,7 @@ O5+Kt+KfU5M9uAN7tob3+yG18ZJt9FY+5FTK1TV5LmF5OTGBN9XyehT2Miqa8sSu80rwpN
 nhe+U/XswAp9KEVYkSIjFeoy/amsOP+qvRke1dKWBsU12IbhnMgjDHVggkYV52l7d9S2bx
 kmaSGj362OnCCNAAAACWRhcmVARGFyZQE=
 -----END OPENSSH PRIVATE KEY-----
-Test a few of the users randomly, and ensure that you are able to connect to the server using the private key and the public key.
-
-Instructions On How To Submit Your Work For Review And Feedback
-Follow the steps below to submit your work for review
+```
 
 Create a git repository and name it auxillary-projects
 name your shell script onboarding users

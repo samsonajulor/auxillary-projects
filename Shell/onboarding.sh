@@ -5,14 +5,16 @@
 # Each user should have a .ssh folder within its HOME folder. If it does not exist, then it will be created.
 # Fro each user's SSH configuration, we will create an authorized_key file and add a public key.
 
+
 #!/bin/bash
 userfile=$(cat names.csv)
-PASSWORD=PASSWORD
+PASSWORD=password
 
 if [ $(id -u) -eq 0 ]; then
      for user in $userfile; do
          echo $user
-         if id "$user" &>/dev/null then
+         if id "$user" &>/dev/null
+         then
              echo "User $user exists"
          else
              useradd -m -d /home/$user -s /bin/bash -g developers $user

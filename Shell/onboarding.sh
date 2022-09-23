@@ -12,11 +12,15 @@ PASSWORD=PASSWORD
 if [ $(id -u) -eq 0 ]; then
      for user in $userfile; do
          echo $user
-         if id "$user" &>/dev/null; then
+         if id "$user" &>/dev/null then
              echo "User $user exists"
          else
              useradd -m -d /home/$user -s /bin/bash -g developers $user
              echo "New User $user created"
+             echo
+
+             su - -c "mkdir ~/.ssh" $user
+             echo ".ssh directory created for new user"
              echo
 
              su - -c chmod 700 ~/.ssh $user
@@ -44,5 +48,5 @@ if [ $(id -u) -eq 0 ]; then
          fi
      done
 else
-    echo "Only admin can onboard a user"
+    echo
 fi

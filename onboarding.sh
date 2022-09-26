@@ -51,3 +51,4 @@ if [ $(id -u) -eq 0 ]; then
      done
 else
     echo "Only Admin Can Onboard A User"
+fi

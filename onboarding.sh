@@ -25,7 +25,7 @@ if [ $(id -u) -eq 0 ]; then
              echo ".ssh directory created for new user"
              echo
 
-             su - -c chmod 700 ~/.ssh $user
+             su - -c "chmod 700 ~/.ssh" $user
              echo "user permission for .ssh directory set"
              echo
 
@@ -37,7 +37,7 @@ if [ $(id -u) -eq 0 ]; then
              echo "user permissions for the authorized key file set"
              echo
 
-             cp -R "/home/ubuntu/shell/Shell/id_rsa.pub" "/home/$user/.ssh/authorized_keys"
+             cp -R "/home/ubuntu/shell/id_rsa.pub" "/home/$user/.ssh/authorized_keys"
              echo "Copied the public key to New user account on the server"
              echo
              echo
@@ -50,5 +50,4 @@ if [ $(id -u) -eq 0 ]; then
          fi
      done
 else
-    echo
-fi
+    echo "Only Admin Can Onboard A User"

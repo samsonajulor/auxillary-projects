@@ -10,6 +10,7 @@
 userfile=$(cat names.csv)
 PASSWORD=password
 
+# ensure that the user running this file has root priviledge
 if [ $(id -u) -eq 0 ]; then
      for user in $userfile; do
          echo $user
